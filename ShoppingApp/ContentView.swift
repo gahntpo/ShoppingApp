@@ -11,7 +11,6 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-
             FirstTabView()
                 .tabItem {
                     Label("First", systemImage: "1.circle")

@@ -26,6 +26,9 @@
 		177D3B3D2A090EEE00804199 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3B3C2A090EEE00804199 /* ProductDetailView.swift */; };
 		177D3B3F2A09114400804199 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3B3E2A09114400804199 /* AuthenticationView.swift */; };
 		177D3B412A09147400804199 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3B402A09147400804199 /* ProductImageView.swift */; };
+		177D3B432A091DAE00804199 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3B422A091DAE00804199 /* SettingsView.swift */; };
+		177D3B462A09373000804199 /* swiftui_shopping_app_sheet_filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 177D3B452A09373000804199 /* swiftui_shopping_app_sheet_filter.jpg */; };
+		177D3B482A0937B800804199 /* swiftui_shopping_app_fullscreencover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 177D3B472A0937B800804199 /* swiftui_shopping_app_fullscreencover.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		177D3B3C2A090EEE00804199 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		177D3B3E2A09114400804199 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		177D3B402A09147400804199 /* ProductImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageView.swift; sourceTree = "<group>"; };
+		177D3B422A091DAE00804199 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		177D3B452A09373000804199 /* swiftui_shopping_app_sheet_filter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swiftui_shopping_app_sheet_filter.jpg; sourceTree = "<group>"; };
+		177D3B472A0937B800804199 /* swiftui_shopping_app_fullscreencover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swiftui_shopping_app_fullscreencover.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		1758BD762A08E8030021BA30 = {
 			isa = PBXGroup;
 			children = (
+				177D3B442A09371600804199 /* images */,
 				1758BD812A08E8030021BA30 /* ShoppingApp */,
 				1758BD802A08E8030021BA30 /* Products */,
 			);
@@ -142,8 +149,18 @@
 				177D3B402A09147400804199 /* ProductImageView.swift */,
 				1758BDA32A08EFDD0021BA30 /* ProductCategoryListView.swift */,
 				177D3B3E2A09114400804199 /* AuthenticationView.swift */,
+				177D3B422A091DAE00804199 /* SettingsView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		177D3B442A09371600804199 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				177D3B452A09373000804199 /* swiftui_shopping_app_sheet_filter.jpg */,
+				177D3B472A0937B800804199 /* swiftui_shopping_app_fullscreencover.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +223,8 @@
 			files = (
 				1758BD8B2A08E8040021BA30 /* Preview Assets.xcassets in Resources */,
 				1758BD872A08E8040021BA30 /* Assets.xcassets in Resources */,
+				177D3B482A0937B800804199 /* swiftui_shopping_app_fullscreencover.jpg in Resources */,
+				177D3B462A09373000804199 /* swiftui_shopping_app_sheet_filter.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +238,7 @@
 				1758BDA02A08ECB90021BA30 /* ProductListView.swift in Sources */,
 				1758BD852A08E8030021BA30 /* ContentView.swift in Sources */,
 				1758BDA42A08EFDD0021BA30 /* ProductCategoryListView.swift in Sources */,
+				177D3B432A091DAE00804199 /* SettingsView.swift in Sources */,
 				1758BD832A08E8030021BA30 /* ShoppingAppApp.swift in Sources */,
 				1758BD942A08E86D0021BA30 /* Product.swift in Sources */,
 				177D3B412A09147400804199 /* ProductImageView.swift in Sources */,

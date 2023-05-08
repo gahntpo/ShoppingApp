@@ -19,11 +19,19 @@ struct FirstTabView: View {
             ProductListView(products: fetcher.products,
                             state: fetcher.state)
             .toolbar {
+                
+                ToolbarItem(placement: .navigation) {
+                    Button {
+                        showSettings.toggle()
+                    } label: {
+                        Label("Settings", systemImage: "gear")
+                    }
+                }
                 ToolbarItem {
                     Button {
                         showCategorySelector.toggle()
                     } label: {
-                        Label("Settings", systemImage: "line.3.horizontal.decrease.circle")
+                        Label("Choose Category", systemImage: "line.3.horizontal.decrease.circle")
                     }
                 }
             }
@@ -40,6 +48,10 @@ struct FirstTabView: View {
             fetcher.load()
         }) {
             ProductCategoryListView(selectedCategory: $fetcher.selectedCategory)
+        }
+        
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
         }
         
     }

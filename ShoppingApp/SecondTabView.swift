@@ -22,8 +22,7 @@ struct SecondTabView: View {
                     Button {
                         showCategorySelector.toggle()
                     } label: {
-                        Label("Settings",
-                              systemImage: "line.3.horizontal.decrease.circle")
+                        Label("Choose Category", systemImage: "line.3.horizontal.decrease.circle")
                     }
                 }
             }
