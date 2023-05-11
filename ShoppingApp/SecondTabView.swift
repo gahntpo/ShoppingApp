@@ -13,6 +13,8 @@ struct SecondTabView: View {
     @State private var showSettings: Bool = false
     @State private var showCategorySelector: Bool = false
     
+    @State private var currentDetent = PresentationDetent.large
+    
     var body: some View {
         NavigationStack {
             ProductListView(products: fetcher.products,
@@ -33,7 +35,9 @@ struct SecondTabView: View {
         
         .sheet(isPresented: $showCategorySelector) {
             ProductCategoryListView(selectedCategory: $fetcher.selectedCategory)
-                .presentationDetents([.medium])
+                .presentationDetents([.medium, .large, .fraction(0.8), .height(200)], selection: $currentDetent)
+                .presentationBackgroundInteraction(.enabled(upThrough: .height(200)))
+                .presentationContentInteraction(.scrolls)
         }
     }
 }

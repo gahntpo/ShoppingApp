@@ -52,8 +52,13 @@ struct FirstTabView: View {
         
         .sheet(isPresented: $showSettings) {
             SettingsView()
+             // .presentationBackground(.thinMaterial)
+                .presentationBackground(alignment: .bottom) {
+                    LinearGradient(colors: [Color.pink, Color.purple], startPoint: .bottomLeading, endPoint: .topTrailing)
+                }
+                .presentationCornerRadius(50)
+                .interactiveDismissDisabled()
         }
-        
     }
 }
 

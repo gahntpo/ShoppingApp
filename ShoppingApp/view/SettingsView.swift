@@ -8,9 +8,24 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        Text("Settings")
-            .font(.title)
+        VStack(spacing: 50) {
+            Text("Settings")
+                .font(.title)
+                .bold()
+            
+            Button {
+                dismiss()
+            } label: {
+                Text("Done")
+            }
+            .buttonStyle(.bordered)
+
+        }
+           // .foregroundColor(.white)
     }
 }
 

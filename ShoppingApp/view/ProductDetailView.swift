@@ -39,10 +39,17 @@ struct ProductDetailView: View {
                         .background(Capsule().fill(Color.indigo))
                 }
                 
+                NavigationLink {
+                    FeedbackView()
+                } label: {
+                    Text("Leave a Review")
+                }
+                .padding(.bottom)
+                
                 Text("$\(product.price, specifier: "%.2f")")
                     .bold()
                     .foregroundColor(.green)
-
+                
                 Button {
                     // check if logged in, otherwise
                     showAuthView.toggle()
