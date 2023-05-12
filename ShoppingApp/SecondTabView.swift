@@ -20,6 +20,10 @@ struct SecondTabView: View {
             ProductListView(products: fetcher.products,
                             state: fetcher.state)
             .toolbar {
+                ToolbarItemGroup(placement: .navigation) {
+                    UserProfileButtonView()
+                }
+                
                 ToolbarItem {
                     Button {
                         showCategorySelector.toggle()

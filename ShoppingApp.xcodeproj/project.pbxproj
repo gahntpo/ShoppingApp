@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		174665B62A0E5F06000321E4 /* UserProfileButtonOldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174665B52A0E5F06000321E4 /* UserProfileButtonOldView.swift */; };
+		174665B82A0E6239000321E4 /* UserProfileButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174665B72A0E6239000321E4 /* UserProfileButtonView.swift */; };
 		1758BD832A08E8030021BA30 /* ShoppingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1758BD822A08E8030021BA30 /* ShoppingAppApp.swift */; };
 		1758BD852A08E8030021BA30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1758BD842A08E8030021BA30 /* ContentView.swift */; };
 		1758BD872A08E8040021BA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1758BD862A08E8040021BA30 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		174665B52A0E5F06000321E4 /* UserProfileButtonOldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButtonOldView.swift; sourceTree = "<group>"; };
+		174665B72A0E6239000321E4 /* UserProfileButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButtonView.swift; sourceTree = "<group>"; };
 		1758BD7F2A08E8030021BA30 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1758BD822A08E8030021BA30 /* ShoppingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppApp.swift; sourceTree = "<group>"; };
 		1758BD842A08E8030021BA30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		174665B42A0E5EE5000321E4 /* user profile */ = {
+			isa = PBXGroup;
+			children = (
+				174665B72A0E6239000321E4 /* UserProfileButtonView.swift */,
+				174665B52A0E5F06000321E4 /* UserProfileButtonOldView.swift */,
+			);
+			path = "user profile";
+			sourceTree = "<group>";
+		};
 		1758BD762A08E8030021BA30 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 				1758BDA32A08EFDD0021BA30 /* ProductCategoryListView.swift */,
 				177D3B3E2A09114400804199 /* AuthenticationView.swift */,
 				177D3B422A091DAE00804199 /* SettingsView.swift */,
+				174665B42A0E5EE5000321E4 /* user profile */,
 				17A9290D2A0C229200F75D84 /* feedback */,
 			);
 			path = view;
@@ -277,6 +291,8 @@
 				1758BDAC2A09064F0021BA30 /* AutomaticProductFetcher.swift in Sources */,
 				1758BDA82A0905D30021BA30 /* FirstTabView.swift in Sources */,
 				1758BDA62A08F0010021BA30 /* ProductCategoryFetcher.swift in Sources */,
+				174665B62A0E5F06000321E4 /* UserProfileButtonOldView.swift in Sources */,
+				174665B82A0E6239000321E4 /* UserProfileButtonView.swift in Sources */,
 				1758BD962A08E8940021BA30 /* Category.swift in Sources */,
 				177D3B3D2A090EEE00804199 /* ProductDetailView.swift in Sources */,
 				17F1763E2A0B926E0056D984 /* FeedbackView.swift in Sources */,
