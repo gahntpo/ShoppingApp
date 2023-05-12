@@ -10,6 +10,9 @@ import SwiftUI
 // alert closes when button pressed
 // dismiss to go back in navigationstack
 
+
+
+
 struct SubmitReviewButtonView: View {
     
     @State private var showAlert = false
@@ -25,29 +28,18 @@ struct SubmitReviewButtonView: View {
             Text("Submit")
         }
         .buttonStyle(.borderedProminent)
-        
         .alert(isPresented: $showAlert, error: error) { _ in
-       //     Button("Try Again") {
-                // Handle acknowledgement.
-       //     }
-            
-            // Delete My Review
             Button("Delete Review", role: .destructive) {
                 dismiss()
             }
-            
-            Button("Cancel", role: .cancel) {
-                // Handle the acknowledgement.
-               
-            }
-            
-
         } message: { error in
             Text(error.recoverySuggestion ?? "Try again later.")
         }
-        
     }
 }
+
+
+
 
 struct SubmitReviewButtonView_Previews: PreviewProvider {
     static var previews: some View {

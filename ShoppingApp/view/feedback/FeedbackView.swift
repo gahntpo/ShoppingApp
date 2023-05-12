@@ -29,8 +29,6 @@ struct FeedbackView: View {
                     .border(Color.gray, width: 1)
                     .frame(maxHeight: 300)
             }
-            
-            
             Button(action: {
                 self.isEmojiPopoverPresented = true
             }) {
@@ -63,3 +61,5 @@ struct FeedbackView_Previews: PreviewProvider {
         FeedbackView()
     }
 }
+
+

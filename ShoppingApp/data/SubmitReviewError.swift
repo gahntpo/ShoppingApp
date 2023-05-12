@@ -34,7 +34,7 @@ enum SubmitReviewError: Error, LocalizedError {
             case .notBoughtProduct:
                return "Maybe try next time."
             case .noNetworkConnection:
-               return "You are ot connected to the internet."
+               return "You are not connected to the internet."
         }
     }
 }

@@ -10,10 +10,14 @@ import SwiftUI
 // short buttons horizonal stack
 // long verical stack
 
+
+
+
+
+
 struct SubmitReviewButtonOldAlertView: View {
     @State private var showAlert = false
     @State private var error: SubmitReviewError? = nil
-
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -31,13 +35,13 @@ struct SubmitReviewButtonOldAlertView: View {
                 primaryButton: .default(
                     Text("Try Again"),
                     action: {
-                        
+                        // try again
                     }
                 ),
                 secondaryButton: .destructive(
                     Text("Delete My Review"),
                     action: {
-                        
+                        dismiss()
                    }
                 )
             )
@@ -45,6 +49,9 @@ struct SubmitReviewButtonOldAlertView: View {
         
     }
 }
+
+
+
 
 struct SubmitReviewButtonOldAlertView_Previews: PreviewProvider {
     static var previews: some View {
