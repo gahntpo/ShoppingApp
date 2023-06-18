@@ -12,7 +12,7 @@ struct ProductCategoryListView: View {
     @StateObject private var categoryFetcher = ProductCategoryFetcher()
     @Binding var selectedCategory: String?
     @State private var searchText = ""
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss)  var dismiss
     
     var categories: [String] {
         guard !searchText.isEmpty else { return categoryFetcher.categories }
@@ -30,7 +30,9 @@ struct ProductCategoryListView: View {
                 }
             }
             .navigationTitle("Select a Category")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar(content: {
                 ToolbarItem {
                     Button {
