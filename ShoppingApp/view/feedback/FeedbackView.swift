@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct FeedbackView: View {
-    @State private var isEmojiPopoverPresented: Bool = false
+    
     @State private var selectedEmoji: Emoji? = nil
     @State private var feedback: String = ""
+    
+    @State private var isEmojiPopoverPresented: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -29,8 +31,9 @@ struct FeedbackView: View {
                     .border(Color.gray, width: 1)
                     .frame(maxHeight: 300)
             }
+            
             Button(action: {
-                self.isEmojiPopoverPresented = true
+                isEmojiPopoverPresented.toggle()
             }) {
                 HStack {
                     Text(selectedEmoji == nil ? "Or Select an Emoji" : "You selected: ")
@@ -39,12 +42,14 @@ struct FeedbackView: View {
                 }
             }
             .popover(isPresented: $isEmojiPopoverPresented,
-                     attachmentAnchor: .rect(.bounds),
-                     arrowEdge: .top) {
+                     attachmentAnchor: .point(.trailing),
+                     arrowEdge: .trailing,
+                     content: {
                 EmojiSelectorView(selection: $selectedEmoji)
-                    .frame(minWidth: 300, maxHeight: 600)
-                    .presentationCompactAdaptation(.none)
-            }
+                    .frame(minWidth: 300, maxHeight: 570)
+                  .presentationCompactAdaptation(.none)
+            })
+            
             
             Spacer()
             
@@ -52,6 +57,8 @@ struct FeedbackView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .padding()
+        .frame(maxWidth: 600)
+
     }
 }
 

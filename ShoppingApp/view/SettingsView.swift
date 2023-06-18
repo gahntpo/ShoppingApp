@@ -16,7 +16,7 @@ struct SettingsView: View {
             Text("Settings")
                 .font(.title)
                 .bold()
-            
+                .foregroundStyle(.white)
             Button {
                 dismiss()
             } label: {

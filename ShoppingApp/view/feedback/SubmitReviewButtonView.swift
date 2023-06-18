@@ -11,8 +11,6 @@ import SwiftUI
 // dismiss to go back in navigationstack
 
 
-
-
 struct SubmitReviewButtonView: View {
     
     @State private var showAlert = false

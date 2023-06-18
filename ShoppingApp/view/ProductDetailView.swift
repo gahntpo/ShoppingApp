@@ -10,12 +10,15 @@ import SwiftUI
 struct ProductDetailView: View {
     
     let product: Product
-    @State private var showAuthView = false
+    @State private var showAuth = false
+    @State private var selectedTagColor: TagColor = .blue
     
     var body: some View {
         VStack(spacing: 20) {
            ProductImageView(product: product)
-            .frame(maxHeight: 250)
+            .frame(maxWidth: .infinity, maxHeight: 250)
+            .padding()
+            .background(Color.white)
             
             VStack(alignment: .leading) {
                 Text(product.title)
@@ -51,8 +54,8 @@ struct ProductDetailView: View {
                     .foregroundColor(.green)
                 
                 Button {
-                    // check if logged in, otherwise
-                    showAuthView.toggle()
+                    // check if logged in, otherwise show auth view
+                    showAuth.toggle()
                 } label: {
                     Label("Buy Now", systemImage: "cart")
                         .frame(maxWidth: .infinity)
@@ -63,15 +66,60 @@ struct ProductDetailView: View {
             }
         }
         .padding(.horizontal)
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
-        .fullScreenCover(isPresented: $showAuthView) {
+        .fullScreenCover(isPresented: $showAuth, content: {
             AuthenticationView()
-        }
+        })
+        #else
+        .sheet(isPresented: $showAuth, content: {
+            AuthenticationView()
+        })
+        #endif
+        .toolbar(content: {
+            Menu {
+                
+                ControlGroup("Customize") {
+                    Button {
+                        
+                    } label: {
+                        Label("Add to Favorites", systemImage: "heart")
+                    }
+                    
+                    Button {
+                    } label: {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
+                    
+                    Button {
+                    } label: {
+                        Label("Open Shopping Cart", systemImage: "cart")
+                    }
+                }
+                .controlGroupStyle(.compactMenu)
+                
+                Picker("Select a tag color",
+                       selection: $selectedTagColor) {
+                    ForEach(TagColor.allCases) { tag in
+                        Label(tag.rawValue.capitalized, systemImage: "tag")
+                            .tint(tag.color)
+                    }
+                }
+                #if os(iOS)
+               .paletteSelectionEffect(.symbolVariant(.fill))
+                .pickerStyle(.palette)
+                #endif
+            } label: {
+                Label("more", systemImage: "ellipsis.circle")
+            }
+        })
     }
 }
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(product: Product.example())
+        NavigationStack {
+            ProductDetailView(product: Product.example())
+        }
     }
 }

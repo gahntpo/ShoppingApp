@@ -10,16 +10,14 @@ import SwiftUI
 struct FirstTabView: View {
     
     @StateObject var fetcher = ProductFetcher()
-    
-    @State private var showSettings: Bool = false
-    @State private var showCategorySelector: Bool = false
+    @State private var showCategorySelector = false
+    @State private var showSettings = false
     
     var body: some View {
         NavigationStack(root: {
             ProductListView(products: fetcher.products,
                             state: fetcher.state)
             .toolbar {
-                
                 ToolbarItem(placement: .navigation) {
                     Button {
                         showSettings.toggle()
@@ -43,22 +41,24 @@ struct FirstTabView: View {
                 ProductDetailView(product: product)
             })
         })
-        .sheet(isPresented: $showCategorySelector, onDismiss: {
-            fetcher.products = []
+        .sheet(isPresented: $showCategorySelector,
+               onDismiss: {
             fetcher.load()
-        }) {
+        }, content: {
             ProductCategoryListView(selectedCategory: $fetcher.selectedCategory)
-        }
-        
-        .sheet(isPresented: $showSettings) {
+        })
+        .sheet(isPresented: $showSettings, content: {
             SettingsView()
-             // .presentationBackground(.thinMaterial)
-                .presentationBackground(alignment: .bottom) {
-                    LinearGradient(colors: [Color.pink, Color.purple], startPoint: .bottomLeading, endPoint: .topTrailing)
+                .interactiveDismissDisabled()
+                //.presentationBackground(.ultraThinMaterial)
+                .presentationBackground {
+                    LinearGradient(colors: [Color.pink, .purple],
+                                   startPoint: .topLeading,
+                                   endPoint: .bottomTrailing)
                 }
                 .presentationCornerRadius(50)
-                .interactiveDismissDisabled()
-        }
+        })
+        
     }
 }
 

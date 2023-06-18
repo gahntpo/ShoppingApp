@@ -9,17 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) var hori
+    #endif
+    
+    var isCompact: Bool {
+        #if os(macOS)
+        return false
+        #else
+        return hori == .compact
+        #endif
+    }
+    
     var body: some View {
-        TabView {
-            FirstTabView()
-                .tabItem {
-                    Label("First", systemImage: "1.circle")
-                }
+        if isCompact {
+            TabView {
+                FirstTabView()
+                    .tabItem {
+                        Label("First", systemImage: "1.circle")
+                    }
+                
+                SecondTabView()
+                    .tabItem {
+                        Label("Second", systemImage: "2.circle")
+                    }
+            }
             
-            SecondTabView()
-                .tabItem {
-                    Label("Second", systemImage: "2.circle")
-                }
+        } else {
+            NavigationSplitExample()
         }
     }
 }

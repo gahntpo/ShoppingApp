@@ -16,11 +16,14 @@ struct UserProfileButtonOldView: View {
         } label: {
             Image(systemName: "person.fill")
         }
+        #if os(iOS)
         .actionSheet(isPresented: $showActionSheet) {
             userSheet()
         }
+        #endif
     }
     
+    #if os(iOS)
     func userSheet() -> ActionSheet {
 
         let picturButton = ActionSheet.Button.default(Text("Change Profile Picture")) {  }
@@ -34,6 +37,7 @@ struct UserProfileButtonOldView: View {
                            message: Text(""),
                            buttons: buttons)
     }
+    #endif
 }
 
 struct UserProfileButtonOldView_Previews: PreviewProvider {
